@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #6c63ff;
+    --bg: #f3f4ff;
+    --card: #fff;
+    --text: #222;
+    --muted: #777;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: .3s;
+}
+
+body.dark {
+    --bg: #171725;
+    --card: #252538;
+    --text: #fff;
+    --muted: #bbb;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 25px 15px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--primary);
+}
+
+header button {
+    border: 0;
+    border-radius: 50%;
+    padding: 12px;
+    cursor: pointer;
+    background: var(--card);
+    font-size: 18px;
+}
+
+.subtitle {
+    color: var(--muted);
+    text-align: center;
+    margin: 10px 0 25px;
+}
+
+.timer-card,
+.settings,
+.tip,
+.tasks {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px #0001;
+}
+
+.timer-card {
+    text-align: center;
+}
+
+.modes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.modes button,
+.controls button,
+#apply,
+#newTip,
+#add {
+    border: 0;
+    padding: 11px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modes button {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.modes .active {
+    background: var(--primary);
+    color: white;
+}
+
+.timer {
+    width: 230px;
+    height: 230px;
+    margin: auto;
+    border: 12px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#time {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.timer small {
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.controls #start {
+    background: var(--primary);
+    color: white;
+}
+
+.controls #reset {
+    background: var(--bg);
+    color: var(--text);
+}
+
+#message {
+    color: var(--muted);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stats div {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px #0001;
+}
+
+.stats span,
+.stats b {
+    display: block;
+}
+
+.stats span {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.stats b {
+    font-size: 23px;
+    color: var(--primary);
+}
+
+.settings h2,
+.tip h2,
+.tasks h2 {
+    margin-bottom: 15px;
+}
+
+.settings label {
+    display: inline-block;
+    width: 48%;
+    color: var(--muted);
+}
+
+.settings input {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    margin-top: 7px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+#apply {
+    margin-top: 15px;
+    background: var(--primary);
+    color: white;
+}
+
+.tip {
+    background: linear-gradient(135deg, #6c63ff, #9b95ff);
+    color: white;
+}
+
+.tip p {
+    margin-bottom: 15px;
+}
+
+#newTip {
+    background: #ffffff33;
+    color: white;
+}
+
+.taskInput {
+    display: flex;
+    gap: 8px;
+}
+
+.taskInput input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+#add {
+    background: var(--primary);
+    color: white;
+}
+
+#taskList {
+    list-style: none;
+    margin-top: 15px;
+}
+
+#taskList li {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+#taskList li span {
+    margin-left: 8px;
+}
+
+.delete {
+    border: 0;
+    background: none;
+    color: red;
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .settings label {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .timer {
+        width: 210px;
+        height: 210px;
+    }
+
+    #time {
+        font-size: 42px;
+    }
+}

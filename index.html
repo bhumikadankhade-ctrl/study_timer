@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>📚 FocusFlow</h1>
+        <button id="theme">🌙</button>
+    </header>
+
+    <p class="subtitle">Study smarter, take better breaks.</p>
+
+    <div class="timer-card">
+
+        <div class="modes">
+            <button id="studyBtn" class="active">📖 Study</button>
+            <button id="breakBtn">☕ Break</button>
+        </div>
+
+        <div class="timer">
+            <span id="time">25:00</span>
+            <small id="label">Study Time</small>
+        </div>
+
+        <div class="controls">
+            <button id="reset">↻ Reset</button>
+            <button id="start">▶ Start</button>
+        </div>
+
+        <p id="message">🎯 Stay focused and do your best!</p>
+    </div>
+
+    <div class="stats">
+        <div>
+            <span>Sessions</span>
+            <b id="sessions">0</b>
+        </div>
+
+        <div>
+            <span>Study Minutes</span>
+            <b id="minutes">0</b>
+        </div>
+
+        <div>
+            <span>Streak</span>
+            <b id="streak">0 🔥</b>
+        </div>
+    </div>
+
+    <div class="settings">
+        <h2>⚙ Timer Settings</h2>
+
+        <label>
+            Study Minutes
+            <input id="studyTime" type="number" value="25" min="1" max="120">
+        </label>
+
+        <label>
+            Break Minutes
+            <input id="breakTime" type="number" value="5" min="1" max="60">
+        </label>
+
+        <button id="apply">Apply Settings</button>
+    </div>
+
+    <div class="tip">
+        <h2>💡 Study Tip</h2>
+        <p id="tipText">
+            Keep your phone away while studying.
+        </p>
+        <button id="newTip">New Tip</button>
+    </div>
+
+    <div class="tasks">
+        <h2>📝 Today's Tasks</h2>
+
+        <div class="taskInput">
+            <input id="task" placeholder="Enter a task...">
+            <button id="add">Add</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <footer>
+        FocusFlow © 2026 | HTML • CSS • JavaScript
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
